@@ -1,0 +1,609 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{amssymb,amsthm}
+\usepackage{amsmath}
+\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage{qtree}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{automata,positioning,decorations.markings,arrows}
+\begin{document}
+\newpage
+\begin{center}
+\textcolor[rgb]{1.00,0.00,0.00}{\Large{\textbf{COMPUTER NETWORK ASSIGNMENT}}}\\
+{\textbf{Mohammad Shahrukh }}\\
+{\textbf{Mohammad Israr }}\\
+{\textbf{Mohammad Usama }}\\
+{\textbf{Maryam Siddique }}\\
+\end{center}
+\newpage
+Q2. Consider a network connected two systems located 8000 kilometers apart. The bandwidth
+of the network is $100 * 10^5$ bits per second. The propagation delay is 200ns/km. The
+average packet size is $10^7$ bits.\\\\
+A2. Distance = 8000km\\\\
+ bandwidth = 100 $* 10^5$ bits / second \\\\
+ propagation delay = 200ns/km\\\\
+ D= $10^7$ bits\\\\
+  
+ $t_{t}$ = $\frac{D}{Data rate}$\\\\
+ $t_{t}$ = $\frac{10^7}{ 100 * 10^5}$ = 1 sec\\\\
+ $t_{p}$ = $ distance * prpagation delay $ \\\\
+ $t_{p}$ = $ 8000 * 200 $  = 1600000ns = 0.0016 sec\\\\
+(a) Assume that processing delays at nodes are negligible. And network Utilization is
+80\%.
+Then Calculate the minimum size in bits of the sequence number field if
+following flow control technique is used\\
+i. Go-Back-N\\
+ii. Selective Repeat\\\\
+
+ (a) U = $\frac{W* t_{t}}{t_{t}+2t_{p}}$ \\\\
+  80\% =  $\frac{W* 1}{1 + .0032}$\\\\
+  $\frac{80}{100}$ = $\frac{W}{1.0032}$\\\\
+  W = $\frac{80*1.0032}{100}$ = 0.8\\\\
+
+   i. Go-Back N\\\\
+
+   W=$2^{n}$-1 = 0.8\\\\
+   $2^{n}$ = 1 + 0.8 = 1.8\\\\
+   Taking log both sides \\\\
+   log $2^{n}$ = log 1.8\\\\
+   n log 2 = log$\frac{18}{10}$\\\\
+   n log 2 = log 18 - log 10 \\\\
+   n = $log 2^{4} - log 2^{3}$\\\\
+   n = 4 log 2 - 3 log 2 \\\\
+   n = 4-3 = 1 \\\\
+
+   ii. Selective Repeat \\\\
+   W=$2^{n-1}$ = 0.8\\\\
+   $2^{n-1}$ = 0.8 \\\\
+   Taking log both sides \\\\
+   log $2^{n-1}$ = log 0.8\\\\
+   (n-1) log 2 = 0\\\\
+   n-1 =0\\\\
+   n = 1 \\\\
+
+(b) Considering the window size that we have calculated in previous part-a , calculate
+the minimum time sender machine has to wait after sending first window .\\\\\\
+(b) Minimum time = $2t_{p}- W*t_{t}$ = .0032 - .8 = -.7968 = -.8sec\\\\
+(c) Considering the window size that we have calculated in part-a , calculate the through-
+put of the system in case of Go-Back-N and Selective Repeat .\\\\
+(c) window size will remain the same in both the cases\\\\
+    T = $\frac{W*D}{t_{t}+2t_{p}}$= $\frac{0.8* 10^7 }{1 +.0032}$ = $\frac{.8 * 10^7}{1.0032}$= $.8*10^7$ bits per second\\\\
+(d) Assume that processing delays at sender and receiver nodes are 15ms and 10 ms
+respectively . And network Utilization is 50 \% .
+ Then Calculate the minimum size
+in bits of the sequence number field if following
+flow control technique is used \\
+i. Go-Back-N\\
+ii. Selective Repeat\\\\
+(d) Extra delay = 15 + 10 = 25 ms = 0.025sec\\\\
+U = $\frac{W* t_{t}}{t_{t}+2t_{p}+ extra delay time}$ \\\\
+  50\% =  $\frac{W* 1}{1 + .0032 + .025}$\\\\
+  $\frac{50}{100}$ = $\frac{W}{1.0282}$\\\\
+  W = $\frac{50*1.0282}{100}$ = 0.5\\\\
+  i. Go-Back N\\\\
+   W=$2^{n}$-1 = 0.5\\\\
+   $2^{n}$ = 1 + 0.5 = 1.5\\\\
+   Taking log both sides \\\\
+   log $2^{n}$ = log 1.5\\\\
+   n log 2 = log$\frac{15}{10}$\\\\
+   n log 2 = log 15 - log 10 \\\\
+   n = $log 2^{4} - log 2^{3}$\\\\
+   n = 4 log 2 - 3 log 2 \\\\
+   n = 4-3 = 1 \\\\
+
+   ii. Selective Repeat \\\\
+   W=$2^{n-1}$ = 0.5\\\\
+   $2^{n-1}$ = 0.5 \\\\
+   Taking log both sides \\\\
+   log $2^{n-1}$ = log 0.5\\\\
+   (n-1) log 2 = 0\\\\
+   n-1 =0\\\\
+   n = 1 \\\\
+(e) Considering the window size that we have calculated in previous part-d , calculate
+the minimum time sender machine has to wait after sending first window .\\\\
+(e) Minimum time = $2t_{p}- W*t_{t}$ = .0032 - .5 = -.4968 = -.5 sec\\\\
+(f) Considering the window size that we have calculated in part-d , calculate the through-
+put of the system in case of Go-Back-N and Selective Repeat .\\\\
+(f)window size will remain the same in both the cases\\\\
+    T = $\frac{W*D}{t_{t}+2t_{p}+ extra delay time}$= $\frac{0.5* 10^7 }{1 +.0032 + .025}$ = $\frac{.5 * 10^7}{1.0282}$= $.5*10^7$ bits per second\\\\
+(g) Suppose bottleneck Throughput of the system is estimated as 50 $* 10^5$ bits per
+second.Then Calculate the minimum size in bits of the sequence number field if
+following flow control technique is used\\\\
+i. Go-Back-N\\
+ii. Selective Repeat\\\\
+(g) T = $\frac{W*D}{t_{t}+2t_{p}}$\\\\
+   50 $* 10^5$    = $\frac{W*10^7}{1+.0032}$ \\\\
+   W= $\frac{50* 10^5 * 1.0032}{10^7}$= 0.5\\\\
+   i. Go-Back N\\\\
+   W=$2^{n}$-1 = 0.5\\\\
+   $2^{n}$ = 1 + 0.5 = 1.5\\\\
+   Taking log both sides \\\\
+   log $2^{n}$ = log 1.5\\\\
+   n log 2 = log$\frac{15}{10}$\\\\
+   n log 2 = log 15 - log 10 \\\\
+   n = $log 2^{4} - log 2^{3}$\\\\
+   n = 4 log 2 - 3 log 2 \\\\
+   n = 4-3 = 1 \\\\
+
+   ii. Selective Repeat \\\\
+   W=$2^{n-1}$ = 0.5\\\\
+   $2^{n-1}$ = 0.5 \\\\
+   Taking log both sides \\\\
+   log $2^{n-1}$ = log 0.5\\\\
+   (n-1) log 2 = 0\\\\
+   n-1 =0\\\\
+   n = 1 \\\\
+(h) Calculate the throughput and Utilization in case of Stop And Wait Protocol.\\\\
+ (h)T = $\frac{D}{t_{t}+2t_{p}}$\\\\
+ T = $\frac{10^7}{1+.0032}$ \\\\
+ T = $0.9 * 10^7$\\\\
+ U = $\frac{t_{t}}{t_{t}+2t_{p}}$\\\\
+ U = $\frac{1}{1 + .0032}$\\\\
+ U = $\frac{1}{1.0032}$\\\\= 0.99 = 99\%\\\\\\\\
+ 
+ Q4. Consider a network connected two systems located 10000 kilometers apart. The bandwidth
+of the network is $500 * 10^6$ bits per second. The propagation delay is 300ns/km. The
+average packet size is $10^8$ bits.\\\\
+A4. Distance = 10000km\\\\
+ bandwidth = 500 $* 10^6$ bits / second \\\\
+ propagation delay = 300ns/km\\\\
+ D= $10^8$ bits\\\\
+
+ $t_{t}$ = $\frac{D}{Data rate}$\\\\
+ $t_{t}$ = $\frac{10^8}{ 500 * 10^6}$ = .2 sec\\\\
+ $t_{p}$ = $ distance * prpagation delay $ \\\\
+ $t_{p}$ = $ 10000 * 300 $  = 3000000ns = 0.003 sec\\\\
+(a) Assume that processing delays at nodes are negligible. And network Utilization is
+80 \% . Then Calculate the minimum size in bits of the sequence number field if
+following
+flow control technique is used\\
+
+i. Go-Back-N\\
+ii. Selective Repeat\\\\
+
+(a) U = $\frac{W* t_{t}}{t_{t}+2t_{p}}$ \\\\
+  80\% =  $\frac{W* .2}{.2 + .006}$\\\\
+  $\frac{80}{100}$ = $\frac{W * .2}{.206}$\\\\
+  W = $\frac{80*.206}{100*.2}$ = 0.8\\\\
+
+   i. Go-Back N\\\\
+
+   W=$2^{n}$-1 = 0.8\\\\
+   $2^{n}$ = 1 + 0.8 = 1.8\\\\
+   Taking log both sides \\\\
+   log $2^{n}$ = log 1.8\\\\
+   n log 2 = log$\frac{18}{10}$\\\\
+   n log 2 = log 18 - log 10 \\\\
+   n = $log 2^{4} - log 2^{3}$\\\\
+   n = 4 log 2 - 3 log 2 \\\\
+   n = 4-3 = 1 \\\\
+
+   ii. Selective Repeat \\\\
+   W=$2^{n-1}$ = 0.8\\\\
+   $2^{n-1}$ = 0.8 \\\\
+   Taking log both sides \\\\
+   log $2^{n-1}$ = log 0.8\\\\
+   (n-1) log 2 = 0\\\\
+   n-1 =0\\\\
+   n = 1 \\\\
+
+(b) Considering the window size that we have calculated in previous part-a , calculate
+the maximum time sender machine has to wait after sending first window .\\\\
+(b) Minimum time = $2t_{p}- W*t_{t}$ = .006 - .8 = -.794 = -.8sec\\\\
+(c) Considering the window size that we have calculated in part-a , calculate the through-
+put of the system in case of Go-Back-N and Selective Repeat .\\\\
+(c) window size will remain the same in both the cases\\\\
+    T = $\frac{W*D}{t_{t}+2t_{p}}$= $\frac{0.8* 10^8 }{.2 +.006}$ = $\frac{.8 * 10^8}{.206}$= $.4*10^8$ bits per second\\\\
+(d) Assume that processing delays at sender and receiver nodes are 15ms and 10 ms
+respectively . And network Utilization is 50 \% . Then Calculate the minimum size
+in bits of the sequence number field if following
+ow control technique is used\\
+i. Go-Back-N\\
+ii. Selective Repeat\\\\
+(d) Extra delay = 15 + 10 = 25 ms = 0.025sec\\\\
+U = $\frac{W* t_{t}}{t_{t}+2t_{p}+ extra delay time}$ \\\\
+  50\% =  $\frac{W* .2}{.2 + .006 + .025}$\\\\
+  $\frac{50}{100}$ = $\frac{W*.2}{.231}$\\\\
+  W = $\frac{50*.231}{100*.2}$ = 0.6\\\\
+  i. Go-Back N\\\\
+   W=$2^{n}$-1 = 0.6\\\\
+   $2^{n}$ = 1 + 0.6 = 1.6\\\\
+   Taking log both sides \\\\
+   log $2^{n}$ = log 1.6\\\\
+   n log 2 = log$\frac{16}{10}$\\\\
+   n log 2 = log 16 - log 10 \\\\
+   n = $log 2^{4} - log 2^{3}$\\\\
+   n = 4 log 2 - 3 log 2 \\\\
+   n = 4-3 = 1 \\\\
+
+   ii. Selective Repeat \\\\
+   W=$2^{n-1}$ = 0.6\\\\
+   $2^{n-1}$ = 0.6 \\\\
+   Taking log both sides \\\\
+   log $2^{n-1}$ = log 0.6\\\\
+   (n-1) log 2 = 0\\\\
+   n-1 =0\\\\
+   n = 1 \\\\
+(e) Considering the window size that we have calculated in previous part-d , calculate
+the maximum time sender machine has to wait after sending first window .\\\\
+(e) Minimum time = $2t_{p}- W*t_{t}$ = .006 - .6*.2 =.006-.12 = -.114 sec \\\\
+(f) Considering the window size that we have calculated in part-d , calculate the through-
+put of the system in case of Go-Back-N and Selective Repeat .\\\\
+(f)window size will remain the same in both the cases\\\\
+    T = $\frac{W*D}{t_{t}+2t_{p}+ extra delay time}$= $\frac{0.6* 10^8 }{.2 +.006 + .025}$ = $\frac{.6 * 10^8}{.231}$= $2.6*10^8$ bits per second\\\\
+
+(g) Suppose bottleneck Throughput of the system is estimated as $350 * 10^6$ bits per
+second.Then Calculate the minimum size in bits of the sequence number Field if
+following
+flow control technique is used\\
+i. Go-Back-N\\
+ii. Selective Repeat\\\\
+(g) T = $\frac{W*D}{t_{t}+2t_{p}}$\\\\
+   350 $* 10^6$    = $\frac{W*10^8}{.2+.006}$ \\\\
+   W= $\frac{350* 10^6 * .206}{10^8}$= 0.721\\\\
+   i. Go-Back N\\\\
+   W=$2^{n}$-1 = 0.7\\\\
+   $2^{n}$ = 1 + 0.7 = 1.7\\\\
+   Taking log both sides \\\\
+   log $2^{n}$ = log 1.7\\\\
+   n log 2 = log$\frac{17}{10}$\\\\
+   n log 2 = log 17 - log 10 \\\\
+   n = $log 2^{4} - log 2^{3}$\\\\
+   n = 4 log 2 - 3 log 2 \\\\
+   n = 4-3 = 1 \\\\
+
+   ii. Selective Repeat \\\\
+   W=$2^{n-1}$ = 0.7\\\\
+   $2^{n-1}$ = 0.7 \\\\
+   Taking log both sides \\\\
+   log $2^{n-1}$ = log 0.7\\\\
+   (n-1) log 2 = 0\\\\
+   n-1 =0\\\\
+   n = 1 \\\\
+
+(h) Calculate the throughput and Utilization in case of Stop And Wait Protocol.\\\\
+(h)T = $\frac{D}{t_{t}+2t_{p}}$\\\\
+ T = $\frac{10^8}{.2+.006}$ \\\\
+ T = $ 4.9* 10^8$\\\\
+ U = $\frac{t_{t}}{t_{t}+2t_{p}}$\\\\
+ U = $\frac{.2}{.2 + .006}$\\\\
+ U = $\frac{.2}{.206}$\\\\= 0.97 = 97\%\\\\\\\\
+ 
+ Q6. Consider communication link with one way propagation delay of 150 milliseconds and
+data rate of 500kbps . 10 bits are used for the sequence no field .\\\\
+A6.propagation delay=150ms\\\\
+   data rate=500kbps\\\\
+   n=10bits\\\\
+(a) Assume that processing delays at nodes are negligible. And network Utilization is
+70 \% . Then Calculate frame size if following
+flow control technique is used\\
+i. Go-Back-N\\
+ii. Selective Repeat\\
+iii. Stop and Wait\\\\
+
+(a)\\
+i.Go-back-N\\
+U=$\frac{W*t_{t}}{t_{t}+2t_{p}}$\\
+W=$2^n-{1}$ = $2^{10}-1$ = 1023\\\\
+$\frac{70}{100} = \frac{1023 * t_{t}}{t_{t}+300}$\\\\
+$70(t_{t}+300)=1023* t_{t}$\\\\
+$70t_{t} + 21000 = 1023t_{t}$\\
+$1023t_{t}-70t_{t} = 21000$\\\\
+$947t_{t}=21000$\\\\
+$t_{t} = \frac{21000}{947}$ = 22.2ms=.022sec\\\\
+$\frac{Data}{Datarate}$ = .022\\\\
+$\frac{Data}{500*10^3}$ = .022\\\\
+Data = $500*.022*10^3= 11 * 10^3 bits$\\\\
+
+ii. Selective Repeat\\
+U=$\frac{W*t_{t}}{t_{t}+2t_{p}}$\\
+W=$2^{n-1}$ = $2^{10-1}$ = 512\\\\
+$\frac{70}{100} = \frac{512 * t_{t}}{t_{t}+300}$\\\\
+$70(t_{t}+300)=512* t_{t}$\\\\
+$70t_{t} + 21000 = 512t_{t}$\\
+$512t_{t}-70t_{t} = 21000$\\\\
+$442t_{t}=21000$\\\\
+$t_{t} = \frac{21000}{442}$ = 47.5ms=.048sec\\\\
+$\frac{Data}{Datarate}$ = .048\\\\
+$\frac{Data}{500*10^3}$ = .048\\\\
+Data = $500*.048*10^3= 24 * 10^3 bits$\\\\
+
+iii. Stop and wait\\
+U=$\frac{t_{t}}{t_{t}+2t_{p}}$\\
+$\frac{70}{100} = \frac{t_{t}}{t_{t}+300}$\\\\
+$70(t_{t}+300)=t_{t}$\\\\
+$70t_{t} + 21000 = t_{t}$\\
+$70t_{t}-t_{t} = -21000$\\\\
+$69t_{t}=-21000$\\\\
+$t_{t} = \frac{-21000}{69}$ = -304.3ms=-.30sec\\\\
+$\frac{Data}{Datarate}$ = -.30\\\\
+$\frac{Data}{500*10^3}$ = -.30\\\\
+Data = $500* -.30*10^3= -150 * 10^3 bits$\\\\
+(b) Considering the frame size, we have calculated in part-a , calculate the throughput
+of the system in case of Go-Back-N and Selective Repeat .
+(b) \\
+i. Go Back N\\
+T = $\frac{W*D}{t_{t}+2t_{p}}$\\\\
+T = $\frac{1023*11*10^3}{22.2+300}$= $35*10^3$ bits per milisecond\\\\
+ii. Selective Repeat\\
+T = $\frac{W*D}{t_{t}+2t_{p}}$\\\\
+T = $\frac{512*24*10^3}{47.5+300}$= $258.7*10^3$ bits per milisecond\\\\
+(c) Assume that processing delays at receiver node is 55ms. And network Utilization is
+50 \% . Then Calculate frame size if following
+flow control technique is used\\
+i. Go-Back-N\\
+ii. Selective Repeat\\
+iii. Stop and Wait\\\\
+(c)\\
+i.Go-back-N\\
+U=$\frac{W*t_{t}}{t_{t}+2t_{p}}$\\
+W=$2^n-{1}$ = $2^{10}-1$ = 1023\\\\
+$\frac{50}{100} = \frac{1023 * t_{t}}{t_{t}+300+55}$\\\\
+$50(t_{t}+355)=1023* t_{t}$\\\\
+$50t_{t} + 17750 = 1023t_{t}$\\
+$1023t_{t}-50t_{t} = 17750$\\\\
+$967t_{t}=17750$\\\\
+$t_{t} = \frac{17750}{967}$ = 18.4ms=.018sec\\\\
+$\frac{Data}{Datarate}$ = .018\\\\
+$\frac{Data}{500*10^3}$ = .018\\\\
+Data = $500*.018*10^3= 9* 10^3 bits$\\\\
+
+ii. Selective Repeat\\
+U=$\frac{W*t_{t}}{t_{t}+2t_{p}}$\\
+W=$2^{n-1}$ = $2^{10-1}$ = 512\\\\
+$\frac{50}{100} = \frac{512 * t_{t}}{t_{t}+300+55}$\\\\
+$50(t_{t}+355)=512* t_{t}$\\\\
+$50t_{t} + 17750 = 512t_{t}$\\
+$512t_{t}-50t_{t} = 17750$\\\\
+$462t_{t}=17750$\\\\
+$t_{t} = \frac{17750}{462}$ = 38.4ms=.038sec\\\\
+$\frac{Data}{Datarate}$ = .038\\\\
+$\frac{Data}{500*10^3}$ = .038\\\\
+Data = $500*.038*10^3= 19 * 10^3 bits$\\\\
+
+iii. Stop and wait\\
+U=$\frac{t_{t}}{t_{t}+2t_{p}}$\\
+$\frac{50}{100} = \frac{t_{t}}{t_{t}+355}$\\\\
+$50(t_{t}+355)=t_{t}$\\\\
+$50t_{t} + 17750 = t_{t}$\\
+$50t_{t}-t_{t} = -17750$\\\\
+$49t_{t}=-17750$\\\\
+$t_{t} = \frac{-17750}{49}$ = -362.2ms=-.36sec\\\\
+$\frac{Data}{Datarate}$ = -.36\\\\
+$\frac{Data}{500*10^3}$ = -.36\\\\
+Data = $500* -.36*10^3= -180 * 10^3 bits$\\\\
+
+
+
+(d) Considering the frame that we have calculated in part-c , calculate the throughput
+of the system in case of Go-Back-N and Selective Repeat .\\\\
+(d) \\
+i. Go Back N\\
+T = $\frac{W*D}{t_{t}+2t_{p}}$\\\\
+T = $\frac{1023*9*10^3}{22.2+300+55}$= $24.4*10^3$ bits per milisecond\\\\
+ii. Selective Repeat\\
+T = $\frac{W*D}{t_{t}+2t_{p}}$\\\\
+T = $\frac{512*19*10^3}{47.5+300+55}$= $24.2*10^3$ bits per milisecond\\\\
+(e) Assume that processing delays at nodes are negligible. And network Utilization is
+100 \% . Then Calculate frame size if following
+ow control technique is used\\
+i. Go-Back-N\\
+ii. Selective Repeat\\
+iii. Stop and Wait\\\\
+(e)\\
+i.Go-back-N\\
+U=$\frac{W*t_{t}}{t_{t}+2t_{p}}$\\
+W=$2^n-{1}$ = $2^{10}-1$ = 1023\\\\
+$\frac{100}{100} = \frac{1023 * t_{t}}{t_{t}+300}$\\\\
+$t_{t}+300=1023* t_{t}$\\\\
+$t_{t} + 300 = 1023t_{t}$\\
+$1023t_{t}-t_{t} = 300$\\\\
+$1022t_{t}=300$\\\\
+$t_{t} = \frac{300}{1022}$ = .3ms=.0003sec\\\\
+$\frac{Data}{Datarate}$ = .0003\\\\
+$\frac{Data}{500*10^3}$ = .0003\\\\
+Data = $500*.0003*10^3= .15 * 10^3 bits$\\\\
+
+ii. Selective Repeat\\
+U=$\frac{W*t_{t}}{t_{t}+2t_{p}}$\\
+W=$2^{n-1}$ = $2^{10-1}$ = 512\\\\
+$\frac{100}{100} = \frac{512 * t_{t}}{t_{t}+300}$\\\\
+$t_{t}+300=512* t_{t}$\\\\
+$t_{t} + 300 = 512t_{t}$\\
+$512t_{t}-t_{t} = 300$\\\\
+$511t_{t}=300$\\\\
+$t_{t} = \frac{300}{511}$ = .6ms=.0006sec\\\\
+$\frac{Data}{Datarate}$ = .0006\\\\
+$\frac{Data}{500*10^3}$ = .0006\\\\
+Data = $500*.0006*10^3= .3 * 10^3 bits$\\\\
+
+iii. Stop and wait\\
+U=$\frac{t_{t}}{t_{t}+2t_{p}}$\\
+$\frac{100}{100} = \frac{t_{t}}{t_{t}+300}$\\\\
+$t_{t}+300=t_{t}$\\\\
+
+ 
+Q8. Consider a network connected two systems located 9000 kilometers apart. and transmission-
+  time of 120ms . 7 bits are used for the sequence no field .\\\\
+(a) Assume that processing delays at nodes are negligible. And network Utilization is
+70 \% . Then Calculate average speed of the signal on the network if following flow
+control technique is used.\\\\
+i. Go-Back-N\\
+ii. Selective Repeat\\
+iii. Stop and Wait\\\\
+(b) Considering the average speed of the signal on the network , we have calculated in
+part-a , calculate the throughput of the system in case of Go-Back-N and Selective
+Repeat .\\\\
+(c) Assume that processing delays at receiver node is 100ms. And network Utilization
+is 50 \% . Then Calculate average speed of the signal on the network if following flow
+control technique is used\\\\
+i. Go-Back-N\\
+ii.Selective Repeat\\
+iii.Stop and Wait\\\\
+(d) Considering the frame that we have calculated in part-c , calculate the throughput
+of the system in case of Go-Back-N and Selective Repeat .\\\\
+(e) Assume that processing delays at nodes are negligible. And network Utilization is
+100 \% . Then Calculate average speed of the signal on the network if following\\\\
+flow control technique is used\\\\
+i. Go-Back-N\\
+ii. Selective Repeat\\
+iii. Stop and Wait\\\\
+
+(a) Assume that processing delays at nodes are negligible. And network Utilization is
+80 \% . Then Calculate the minimum size in bits of the sequence number field if following
+flow control technique is used\\\\
+i. Go-Back-N\\
+ii.Selective Repeat\\\\
+
+distance=9000km\\\\
+$t_{t}=120ms$\\\\
+n=7 bits\\\\
+u=70\%  =$\frac{70}{100}$\\\\
+go-back N\\\\
+U=$\frac{W*t_{t}}{t_{t}+2t_{p}}$\\\\
+w=$2^{n}-1$\\\\
+=$2^{7}-1  =128-1=127$\\\\
+$\frac{7}{10}$=$\frac{127*120}{120+2t_{p}}$\\\\
+$7(120+2t_{p})=10(127*120)$\\\\
+$840+14t_{p}=152400$\\\\
+$14t_{p}=152400-840$\\\\
+$t_{p}=\frac{151560}{14}=10825.7 ms$\\\\
+$t_{p}=\frac{10825.7}{10^{-3}}$\\\\
+$t_{p}=10.8 sec$\\\\
+$\frac{distance}{speed}$=10.8\\\\
+$speed=\frac{9000}{10.8}$\\\\
+$speed=833.3 km/sec$\\\\
+selective repeat-\\\\
+$w=2^{n-1}=2^{7-1}=2^{6}=64$\\\\
+$u=t_{t}*\frac{w}{t}_{t}+2t_{p}$\\\\
+$\frac{7}{10}=\frac{64*120}{120+2t_{p}}$\\\\
+$7(120+2t_{p})=10(64*120)$\\\\
+$840+14t_{p}=76800$\\\\
+$14t_{p}=76800-840$\\\\
+$t_{p}=\frac{75960}{14} =5425.7 ms$\\\\
+$t_{p}=5425.7*10^{-3}=5.4 sec$\\\\
+$\frac{distance}{speed}=5.4 sec$\\\\
+$speed=\frac{9000}{5.4}$\\\\
+$speed=1666.6 km/sec$\\\\
+
+(b) Considering the average speed of the signal on the network , we have calculated in
+part-a , calculate the throughput of the system in case of Go-Back-N and Selective
+Repeat .\\\\
+
+GO-BACK-N\\\\
+$T=\frac{W*D}{t_{t}+2t_{p}}$\\\\
+$t=\frac{127*10^{7}}{120+2*10825.7}$\\\\
+$t=\frac{127}{21771.4}$\\\\
+$t=0.00583341*10^{7} bits$\\\\
+$t=58334.1 bits$\\\\
+SELECTIVE REPEAT-\\\\
+$t=\frac{64*d}{t_{t}+2t_{p}}$\\\\
+$t=\frac{64*10^{7}}{21771.4}=0.0029396364*10^{7}=29396.36 bits$\\\\
+
+(c) Assume that processing delays at receiver node is 100ms. And network Utilization
+is 50 \% . Then Calculate average speed of the signal on the network if following flow
+control technique is used\\\\
+i. Go-Back-N\\
+ii. Selective Repeat\\
+iii. Stop and Wait\\\\
+
+GO-BACK-N-
+$U=\frac{w*t_{t}}{t_{t}+2t_{p}}$\\\\
+$\frac{50}{100}=\frac{127*120}{220+2t_{p}}$\\\\
+$\frac{1}{2}=\frac{127*120}{220+2t_{p}}$\\\\
+$220+2t_{p}=254+240$\\\\
+$220+2t_{p}=274$\\\\
+$t_{p}=\frac{274}{2}=137 ms =137*10^{-3}$\\\\
+$t_{p}=.14 sec$\\\\
+$\frac{distance}{speed}=.14$\\\\
+$\frac{9000}{.14}=750 km/sec$\\\\
+
+SELECTIVE REPEAT-
+$W=64$\\\\
+$U=\frac{W*t_{t}}{t_{t}+2t_{p}}$\\\\
+$\frac{1}{2}=\frac{120*64}{220=2t_{p}}$\\\\
+$220+2t_{p}=240*128$\\\\
+$220+2t_{p}=30720$\\\\
+$2t_{p}=30500$\\\\
+$t_{p}=306*10^{-3}$\\\\
+$t_{p}=.30$\\\\
+$\frac{distance}{speed}=.30$\\\\
+$speed=\frac{9000}{.30}$\\\\
+$speed=300 km/sec$\\\\
+
+STOP AND WAIT-
+$U=\frac{t_{t}}{t_{t}+2t_{p}}$\\\\
+$\frac{50}{100}=\frac{120}{220+2t_{p}}$\\\\
+$\frac{1}{2}=\frac{120}{220+2t_{p}}$\\\\
+$220+2t_{p}=240$\\\\
+$2t_{p}=240-220$\\\\
+$t_{p}=\frac{20}{2}=10$\\\\
+$t_{p}=10*10^{-3}$\\\\
+$t_{p}=\frac{distance}{speed}$\\\\
+$speed=\frac{9000}{.010}=9000 km/sec$\\\\
+(d) Considering the frame that we have calculated in part-c , calculate the throughput
+of the system in case of Go-Back-N and Selective Repeat .\\\\
+
+GO-BACK-N-
+$t=\frac{w*d}{t_{t}+2t_{p}}$\\\\
+$t=\frac{127*10^{6}*10}{220+2*.12}$\\\\
+$t=\frac{1270}{220+.24}$\\\\
+$t=\frac{1270*10^{6}}{220.24}$\\\
+$t=5.76*10^{6}$\\\
+
+
+SELECTIVE REPEAT-
+$T=\frac{w*d}{t_{t}+2t_{p}}$\\\
+$t=\frac{64*10*10^{6}}{220+2*.30}$\\\
+$t=\frac{640*10^{6}}{220+.60}$\\\
+$t=\frac{640*10^{6}}{220.60}$\\\\
+$t=2.9*10^{6}$\\\
+
+(e) Assume that processing delays at nodes are negligible. And network Utilization is
+100 \% . Then Calculate average speed of the signal on the network if following flow
+control technique is used\\\\
+i. Go-Back-N\\
+ii. Selective Repeat\\
+iii. Stop and Wait\\\\
+GO-BACK-N\\
+$U=\frac{w*t_{t}}{t_{t}+2t_{p}}$\\\\
+$w=2^{n}-1$\\\\
+$w=2^{7}-1=127$\\\\
+$\frac{100}{100}=\frac{127*120}{120+2t_{p}}$\\\\
+$1=\frac{127*120}{120+2t_{p}}$\\\\
+$120+2t_{p}=127*120$\\\\
+$120+2t_{p}=15240$\\\\
+$2t_{p}=15120$\\\\
+$t_{p}=7560=7560*10^{-3}$\\\\
+$t_{p}=.756$\\\\
+$\frac{distance}{speed}=t_{p}$\\\\
+$\frac{distance}{speed}=.756$\\\\
+$speed=\frac{9000}{.756}=11904.8 km/sec$\\\\
+
+SELECTIVE REPEAT-\\
+$U=\frac{W*t_{t}}{t_{t}+2t_{p}}$\\\\
+$w=2^{n-1}=2^{7-1}$\\\\
+$w=64$\\\\
+$\frac{100}{100}=\frac{64*120}{120+2t_{p}}$\\\\
+$1=\frac{64*120}{120+2t_{p}}$\\\\
+$120+2t_{p}=64*120$\\\\
+$2t_{p}=768-120$\\\\
+$t_{p}=\frac{648}{2}=324$\\\\
+$t_{p}=324*10^{-3}=.324 km/sec$\\\\
+$\frac{distance}{speed}=t_{p}$\\\\
+$\frac{distance}{speed}=.324$\\\\
+$speed=\frac{9000}{.324}$\\\\
+$speed=27777.8 km/sec$\\\\
+
+STOP AND WAIT-\\
+$U=\frac{t_{t}}{t_{t}+2t_{p}}$\\\\
+$\frac{100}{100}=\frac{120}{120+2t_{p}}$\\\\
+$120+2t_{p}=120$\\\\
+$2t_{p}=120-120$\\\\
+$t_{p}=0$\\\\
+$t_{p}=\frac{distance}{speed}$\\\\
+$speed=\frac{9000}{0}=0 km/sec$\\\\
+
+
+\end{document} 

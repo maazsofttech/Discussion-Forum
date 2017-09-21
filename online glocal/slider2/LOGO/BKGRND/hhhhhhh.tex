@@ -1,0 +1,211 @@
+\documentclass[a4paper,8pt]{article}
+\usepackage{amssymb,amsthm}
+\usepackage{amsmath}
+\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage{qtree}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{automata,positioning,decorations.markings,arrows}
+\begin{document}
+ Q8. Consider a network connected two systems located 9000 kilometers apart. and transmission-
+  time of 120ms . 7 bits are used for the sequence no field .\\\\
+(a) Assume that processing delays at nodes are negligible. And network Utilization is
+70 \% . Then Calculate average speed of the signal on the network if following flow
+control technique is used.\\\\
+i. Go-Back-N\\
+ii. Selective Repeat\\
+iii. Stop and Wait\\\\
+(b) Considering the average speed of the signal on the network , we have calculated in
+part-a , calculate the throughput of the system in case of Go-Back-N and Selective
+Repeat .\\\\
+(c) Assume that processing delays at receiver node is 100ms. And network Utilization
+is 50 \% . Then Calculate average speed of the signal on the network if following flow
+control technique is used\\\\
+i. Go-Back-N\\
+ii.Selective Repeat\\
+iii.Stop and Wait\\\\
+(d) Considering the frame that we have calculated in part-c , calculate the throughput
+of the system in case of Go-Back-N and Selective Repeat .\\\\
+(e) Assume that processing delays at nodes are negligible. And network Utilization is
+100 \% . Then Calculate average speed of the signal on the network if following\\\\
+flow control technique is used\\\\
+i. Go-Back-N\\
+ii. Selective Repeat\\
+iii. Stop and Wait\\\\
+
+(a) Assume that processing delays at nodes are negligible. And network Utilization is
+80 \% . Then Calculate the minimum size in bits of the sequence number field if following 
+flow control technique is used\\\\
+i. Go-Back-N\\
+ii.Selective Repeat\\\\
+
+distance=9000km\\\\
+$t_{t}=120ms$\\\\
+n=7 bits\\\\
+u=70\%  =$\frac{70}{100}$\\\\
+go-back N\\\\
+U=$\frac{W*t_{t}}{t_{t}+2t_{p}}$\\\\
+w=$2^{n}-1$\\\\
+=$2^{7}-1  =128-1=127$\\\\
+$\frac{7}{10}$=$\frac{127*120}{120+2t_{p}}$\\\\
+$7(120+2t_{p})=10(127*120)$\\\\
+$840+14t_{p}=152400$\\\\
+$14t_{p}=152400-840$\\\\
+$t_{p}=\frac{151560}{14}=10825.7 ms$\\\\
+$t_{p}=\frac{10825.7}{10^{-3}}$\\\\
+$t_{p}=10.8 sec$\\\\
+$\frac{distance}{speed}$=10.8\\\\
+$speed=\frac{9000}{10.8}$\\\\
+$speed=833.3 km/sec$\\\\
+selective repeat-\\\\
+$w=2^{n-1}=2^{7-1}=2^{6}=64$\\\\
+$u=t_{t}*\frac{w}{t}_{t}+2t_{p}$\\\\
+$\frac{7}{10}=\frac{64*120}{120+2t_{p}}$\\\\
+$7(120+2t_{p})=10(64*120)$\\\\
+$840+14t_{p}=76800$\\\\
+$14t_{p}=76800-840$\\\\
+$t_{p}=\frac{75960}{14} =5425.7 ms$\\\\
+$t_{p}=5425.7*10^{-3}=5.4 sec$\\\\
+$\frac{distance}{speed}=5.4 sec$\\\\
+$speed=\frac{9000}{5.4}$\\\\
+$speed=1666.6 km/sec$\\\\
+
+(b) Considering the average speed of the signal on the network , we have calculated in
+part-a , calculate the throughput of the system in case of Go-Back-N and Selective
+Repeat .\\\\
+
+GO-BACK-N\\\\
+$T=\frac{W*D}{t_{t}+2t_{p}}$\\\\
+$t=\frac{127*10^{7}}{120+2*10825.7}$\\\\
+$t=\frac{127}{21771.4}$\\\\
+$t=0.00583341*10^{7} bits$\\\\
+$t=58334.1 bits$\\\\
+SELECTIVE REPEAT-\\\\
+$t=\frac{64*d}{t_{t}+2t_{p}}$\\\\
+$t=\frac{64*10^{7}}{21771.4}=0.0029396364*10^{7}=29396.36 bits$\\\\
+
+(c) Assume that processing delays at receiver node is 100ms. And network Utilization
+is 50 \% . Then Calculate average speed of the signal on the network if following flow
+control technique is used\\\\
+i. Go-Back-N\\
+ii. Selective Repeat\\
+iii. Stop and Wait\\\\
+
+GO-BACK-N-
+$U=\frac{w*t_{t}}{t_{t}+2t_{p}}$\\\\
+$\frac{50}{100}=\frac{127*120}{220+2t_{p}}$\\\\
+$\frac{1}{2}=\frac{127*120}{220+2t_{p}}$\\\\
+$220+2t_{p}=254+240$\\\\
+$220+2t_{p}=274$\\\\
+$t_{p}=\frac{274}{2}=137 ms =137*10^{-3}$\\\\
+$t_{p}=.14 sec$\\\\
+$\frac{distance}{speed}=.14$\\\\
+$\frac{9000}{.14}=750 km/sec$\\\\
+
+SELECTIVE REPEAT-
+$W=64$\\\\
+$U=\frac{W*t_{t}}{t_{t}+2t_{p}}$\\\\
+$\frac{1}{2}=\frac{120*64}{220=2t_{p}}$\\\\
+$220+2t_{p}=240*128$\\\\
+$220+2t_{p}=30720$\\\\
+$2t_{p}=30500$\\\\
+$t_{p}=306*10^{-3}$\\\\
+$t_{p}=.30$\\\\
+$\frac{distance}{speed}=.30$\\\\
+$speed=\frac{9000}{.30}$\\\\
+$speed=300 km/sec$\\\\
+
+STOP AND WAIT-
+$U=\frac{t_{t}}{t_{t}+2t_{p}}$\\\\
+$\frac{50}{100}=\frac{120}{220+2t_{p}}$\\\\
+$\frac{1}{2}=\frac{120}{220+2t_{p}}$\\\\
+$220+2t_{p}=240$\\\\
+$2t_{p}=240-220$\\\\
+$t_{p}=\frac{20}{2}=10$\\\\
+$t_{p}=10*10^{-3}$\\\\
+$t_{p}=\frac{distance}{speed}$\\\\
+$speed=\frac{9000}{.010}=9000 km/sec$\\\\
+(d) Considering the frame that we have calculated in part-c , calculate the throughput
+of the system in case of Go-Back-N and Selective Repeat .\\\\
+
+GO-BACK-N-
+$t=\frac{w*d}{t_{t}+2t_{p}}$\\\\
+$t=\frac{127*10^{6}*10}{220+2*.12}$\\\\
+$t=\frac{1270}{220+.24}$\\\\
+$t=\frac{1270*10^{6}}{220.24}$\\\
+$t=5.76*10^{6}$\\\
+
+
+SELECTIVE REPEAT-
+$T=\frac{w*d}{t_{t}+2t_{p}}$\\\
+$t=\frac{64*10*10^{6}}{220+2*.30}$\\\
+$t=\frac{640*10^{6}}{220+.60}$\\\
+$t=\frac{640*10^{6}}{220.60}$\\\\
+$t=2.9*10^{6}$\\\
+
+(e) Assume that processing delays at nodes are negligible. And network Utilization is
+100 \% . Then Calculate average speed of the signal on the network if following flow
+control technique is used\\\\
+i. Go-Back-N\\
+ii. Selective Repeat\\
+iii. Stop and Wait\\\\
+GO-BACK-N\\
+$U=\frac{w*t_{t}}{t_{t}+2t_{p}}$\\\\
+$w=2^{n}-1$\\\\
+$w=2^{7}-1=127$\\\\
+$\frac{100}{100}=\frac{127*120}{120+2t_{p}}$\\\\
+$1=\frac{127*120}{120+2t_{p}}$\\\\
+$120+2t_{p}=127*120$\\\\
+$120+2t_{p}=15240$\\\\
+$2t_{p}=15120$\\\\
+$t_{p}=7560=7560*10^{-3}$\\\\
+$t_{p}=.756$\\\\
+$\frac{distance}{speed}=t_{p}$\\\\
+$\frac{distance}{speed}=.756$\\\\
+$speed=\frac{9000}{.756}=11904.8 km/sec$\\\\
+
+SELECTIVE REPEAT-
+$U=\frac{W*t_{t}}{t_{t}+2t_{p}}$\\\\
+$w=2^{n-1}=2^{7-1}$\\\\
+$w=64$\\\\
+$\frac{100}{100}=\frac{64*120}{120+2t_{p}}$\\\\
+$1=\frac{64*120}{120+2t_{p}}$\\\\
+$120+2t_{p}=64*120$\\\\
+$2t_{p}=768-120$\\\\
+$t_{p}=\frac{648}{2}=324$\\\\
+$t_{p}=324*10^{-3}=.324 km/sec$\\\\
+$\frac{distance}{speed}=t_{p}$\\\\
+$\frac{distance}{speed}=.324$\\\\
+$speed=\frac{9000}{.324}$\\\\
+$speed=27777.8 km/sec$\\\\
+
+STOP AND WAIT-
+$U=\frac{t_{t}}{t_{t}+2t_{p}}$\\\\
+$\frac{100}{100}=\frac{120}{120+2t_{p}}$\\\\
+$120+2t_{p}=120$\\\\
+$2t_{p}=120-120$\\\\
+$t_{p}=0$\\\\
+$t_{p}=\frac{distance}{speed}$\\\\
+$speed=\frac{9000}{0}=0 km/sec$\\\\
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

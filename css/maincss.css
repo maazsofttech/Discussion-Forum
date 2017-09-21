@@ -1,0 +1,39 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 07-Oct-2015, 19:47:00
+    Author     : MAAZ
+*/
+ 
+li {list-style-type: none;
+font-size: 16pt;
+}
+.mail {
+margin: auto;
+padding-top: 10px;
+padding-bottom: 10px;
+width: 400px;
+background :#123456;
+border: 1px soild silver;
+}
+.mail h2 {
+margin-left: 38px;
+color: white;
+}
+input {
+font-size:18pt;
+}
+input:focus, textarea:focus{ 
+background-color: cyan;
+}
+input submit {
+font-size: 88pt;
+}
+
+.rq {
+color: #ffffff;
+font-size: 10pt;
+}

@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>  <meta content="text/html; charset=ISO-8859-1"
+ http-equiv="content-type">
+  <title>Permission Denied</title>
+</head>
+<body bgcolor =c7d4f9 >
+<table bgcolor=ccccff ; height= 342px; width= 1004px; border="0" style="border-top:0px;border-left:0px;margin-top:0px;margin-left:0px" cellpadding="0" cellspacing="0">
+   <tr>
+      </td>
+   </tr>
+   <tr>
+       <td style="vertical-align: top; background-color: rgb(199, 212, 249);">
+   	   <font size = 15 color="RED" > Access Denied <br> </font>
+	   <font size = 5>  Your company policy restricts you from accessing this content<font color = "RED"><!--URL HERE -->  </font> <br/> 
+
+	   <!-- <H3>Site blocked</H3><hr> <!--User Detail Here--> <br> <!--IP Address Here-->
+
+	    <font color="RED"><br>   Download limit exceeded for 201300266</font>
+	   <P><H4>Please contact your System Administrator</H4></P> 	
+   </td>
+</tr>
+</table>
+</body>
+</html>
